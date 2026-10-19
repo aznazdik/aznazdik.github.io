@@ -1,0 +1,5 @@
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement,m=(h.scrollHeight-h.clientHeight)||1;b.style.width=Math.min(100,(h.scrollTop||document.body.scrollTop)/m*100)+'%'}document.addEventListener('scroll',u,{passive:true});u();
+document.querySelectorAll('[data-copy]').forEach(function(btn){btn.addEventListener('click',function(){var t=btn.getAttribute('data-copy');var done=function(){var o=btn.textContent;btn.textContent='کپی شد';setTimeout(function(){btn.textContent=o},1500)};if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,function(){prompt('',t)})}else{prompt('',t)}})});
+var chips=document.querySelectorAll('[data-filter]');chips.forEach(function(c){c.addEventListener('click',function(){var t=c.getAttribute('data-filter');chips.forEach(function(x){x.classList.toggle('on',x===c)});document.querySelectorAll('[data-tags]').forEach(function(card){card.hidden=!(t==='*'||card.getAttribute('data-tags').split('|').indexOf(t)>-1)})})});
+var h=decodeURIComponent(location.hash.slice(1));if(h){chips.forEach(function(c){if(c.getAttribute('data-filter')===h)c.click()})}
+})();
