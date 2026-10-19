@@ -410,3 +410,9 @@ h2::before{width:.5em;height:.5em;background:none;border:0;border-top:4px solid 
 .theme-btn[aria-pressed="true"] .i-moon{display:none}
 .theme-btn[aria-pressed="true"] .i-sun{display:block}
 @media (max-width:560px){.mast-end{gap:4px}.theme-btn{width:34px;height:34px}.theme-btn svg{width:17px;height:17px}}
+/* at-a-glance numbers: number + sign as one unit, more air for labels */
+.facts{gap:22px 26px}
+.fact .num{display:block;font-size:2.4rem;line-height:1.15;margin-bottom:8px;unicode-bidi:isolate;white-space:nowrap}
+.fact .num em{display:inline-block;padding:.05em .25em;line-height:1.15}
+.fact .lbl{font-size:.9rem;line-height:1.95}
+@media (max-width:560px){.box{padding:16px 18px;margin:2em 8px}.facts{gap:20px}.fact .num{font-size:2.2rem}}
