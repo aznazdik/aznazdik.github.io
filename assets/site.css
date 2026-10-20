@@ -417,3 +417,18 @@ h2::before{width:.5em;height:.5em;background:none;border:0;border-top:4px solid 
 .fact .num em{display:inline-block;padding:.05em .25em;line-height:1.15}
 .fact .lbl{font-size:.9rem;line-height:1.95}
 @media (max-width:560px){.box{padding:16px 18px;margin:2em 8px}.facts{gap:20px}.fact .num{font-size:2.2rem}}
+/* v4 mobile index: a later desktop rule (260px image column) was overriding the 860px one, squeezing the text to nothing.
+   On narrow screens: picture on top across the row, then number + text. */
+@media (max-width:860px){
+  .card a,.related .card a{grid-template-columns:2.4rem minmax(0,1fr);grid-template-areas:"img img" "no txt";gap:14px;padding-block:22px}
+  .card img{display:block;grid-area:img;width:100%;aspect-ratio:16/9}
+  .card .no{grid-area:no;font-size:2rem}
+  .card .txt{grid-area:txt}
+}
+@media (max-width:560px){
+  .card h2{font-size:1.5rem}
+  .index-head{display:grid;grid-template-columns:minmax(0,1fr)}
+  .index-head .filter{flex-wrap:nowrap;overflow-x:auto;min-width:0;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .index-head .filter::-webkit-scrollbar{display:none}
+  .index-head .filter button{flex:none}
+}
